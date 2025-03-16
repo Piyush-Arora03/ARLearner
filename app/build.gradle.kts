@@ -58,4 +58,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("io.github.sceneview:arsceneview:2.2.1")
+    implementation("io.github.sceneview:sceneview:2.0.0")
 }

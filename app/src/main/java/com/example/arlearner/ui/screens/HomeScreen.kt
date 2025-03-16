@@ -9,8 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
-import com.example.arlearner.ui.AlphabetScreen
-import com.example.arlearner.ui.QuizScreen
+
 
 @Composable
 fun HomeScreen(navController: NavController) {
