@@ -1,4 +1,4 @@
-# **ARLearner** 🎓📱
+# **ARLearner** 🎓📚
 
 ### **An interactive Android app that uses Augmented Reality (AR) to visualize 3D objects for learning alphabets and play a quiz based on object recognition.**
 
