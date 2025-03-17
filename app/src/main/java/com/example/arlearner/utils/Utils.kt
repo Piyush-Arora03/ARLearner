@@ -12,6 +12,7 @@ import io.github.sceneview.loaders.ModelLoader
 import io.github.sceneview.model.ModelInstance
 import io.github.sceneview.node.CubeNode
 import io.github.sceneview.node.ModelNode
+import kotlin.random.Random
 
 object Utils {
     val alphabet= mapOf(
@@ -26,11 +27,11 @@ object Utils {
         "I" to "ice_cream.glb",
         "J" to "joker.glb",
         "K" to "kite.glb",
-        "L" to "lamp",
+        "L" to "lamp.glb",
         "M" to "mango.glb",
         "N" to "necklace.glb",
-        "O" to "orange",
-        "P" to "parrot.glb",
+        "O" to "orange.glb",
+        "P" to "pencil.glb",
         "Q" to "queen.glb",
         "R" to "rat.glb",
         "S" to "snake.glb",
@@ -40,7 +41,7 @@ object Utils {
         "W" to "wolf.glb",
         "X" to "xmas_tree.glb",
         "Y" to "yacht.glb",
-        "Z" to "zebra"
+        "Z" to "zebra.glb"
     )
 
     fun GetModelsFromAlphabet(alphabets:String) : String{
@@ -83,11 +84,16 @@ object Utils {
                 boundingBox.isVisible=editingTransforms.isNotEmpty()
             }
         }
-
         anchorNode.onRemovedFromScene={
             modelNode.destroy()
             anchorNode.destroy()
         }
         return anchorNode
+    }
+
+    fun RandomModelGenerator(): Pair<String,String> {
+        val randomIndex=(0 until alphabet.size).random()
+        val alpha= alphabet.keys.elementAt(randomIndex)
+        return Pair(alpha, GetModelsFromAlphabet(alpha))
     }
 }

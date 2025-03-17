@@ -25,6 +25,7 @@ import com.example.arlearner.ui.QuizScreen
 import com.example.arlearner.ui.screens.ARScreen
 import com.example.arlearner.ui.screens.AlphabetScreen
 import com.example.arlearner.ui.screens.HomeScreen
+import com.example.arlearner.ui.screens.QuizScreen
 import com.example.arlearner.ui.theme.ARLearnerTheme
 
 class MainActivity : ComponentActivity() {
@@ -42,7 +43,7 @@ class MainActivity : ComponentActivity() {
                             HomeScreen(navController)
                         }
                         composable("QuizScreen"){
-
+                            QuizScreen(navController)
                         }
                         composable("ARScreen/{alphabet}",
                             arguments = listOf(navArgument("alphabet"){
@@ -50,6 +51,7 @@ class MainActivity : ComponentActivity() {
                             })
                         ){
                             val alphabet=it.arguments!!.getString("alphabet")?:"A"
+
                                 ARScreen(navController,alphabet)
                                 Log.d("main",alphabet)
                         }
