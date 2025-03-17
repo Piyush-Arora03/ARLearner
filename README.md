@@ -16,20 +16,10 @@
 
 ## **📸 Screenshots**
 <p align="center">
-  <img src="Screenshot_1.png" width="200"> 
-  <img src="Screenshot_2.png" width="200"> 
+  <img src="apple_alphabet_screen.jpg" width="200"> 
+  <img src="ice_cream_quiz_screen.jpg" width="200"> 
+  <img src="joker_alphabet_screen.jpg" width="200"> 
 </p>
-
----
-
-## **🛠 Tech Stack**
-- **Kotlin** – Primary language<br>
-- **Jetpack Compose** – UI framework<br>
-- **SceneView AR** – AR rendering and interactions<br>
-- **Navigation Component** – App navigation management<br>
-- **MutableState & State Management** – For handling UI updates<br>
-- **Material Design 3** – For UI components & themes<br>
-- **Sketchfab** – Source for 3D `.glb` models<br>
 
 ---
 
@@ -44,17 +34,6 @@ git clone https://github.com/your-username/ARLearner.git
 
 ---
 
-## **🔧 Dependencies**
-Ensure you have the following dependencies in your `build.gradle`:
-```kotlin
-implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
-implementation("androidx.navigation:navigation-compose:2.7.7")
-implementation("io.github.sceneview:arsceneview:2.2.1")
-implementation("io.github.sceneview:sceneview:2.0.0")
-```
-
----
-
 ## **📄 App Structure & Implementation**
 ### **1️⃣ Alphabet Selection Screen**
 📌 Displays a **grid of alphabets**. Selecting an alphabet navigates to the AR scene.<br>
@@ -66,29 +45,17 @@ implementation("io.github.sceneview:sceneview:2.0.0")
 📌 **Tap gesture** to place models using `onSingleTapConfirmed`.<br>
 📌 **Removes models & clears memory** on exit.<br>
 
-### **3️⃣ Model Management (Utils.kt)**
-📌 **Loads `.glb` models dynamically** from the `models/` folder.<br>
-📌 **Creates anchor nodes** to attach objects to the AR plane.<br>
-📌 **Handles memory cleanup** when objects are removed.<br>
-
-
-## **📄 Ensure Camera & AR Permissions**
-📌 Add this to your `AndroidManifest.xml`:<br>
-```xml
-<uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera.ar"/>
-    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
-    <meta-data
-        android:name="com.google.ar.core"
-        android:value="required" />
-```
+### **3️⃣ Quiz Mode (QuizScreen.kt)**
+📌 Displays a **random 3D object in AR**.<br>
+📌 Users must **select the correct starting alphabet**.<br>
+📌 If correct, a new object is loaded and the score is updated.<br>
+📌 Previous objects are removed before new ones appear.<br>
 
 ---
 
-## **🎯 Usage**
-1️⃣ **Select an Alphabet** – Choose an alphabet from the selection screen.<br>
-2️⃣ **AR View** – Place 3D objects in real-world space using tap gestures.<br>
-3️⃣ **Quiz Mode** – Identify the correct alphabet for a randomly displayed object.<br>
+## **⚠️ Caution**
+- **Rendering the plane (white dots) may take 2 to 5 minutes**, so please be patient after selecting an alphabet or starting the quiz.
+- **Some models may fail to load** due to size constraints or exceeding the **256-bone limit** of `ARSceneView`.
 
 ---
 
