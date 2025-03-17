@@ -61,5 +61,3 @@ git clone https://github.com/your-username/ARLearner.git
 
 <h2 align="center">⭐ Like this project? Give it a star! 🌟</h2>
 <h3 align="center">If you found this project helpful, consider giving it a ⭐ on GitHub! 🚀</h3>
-
-# ARLearner
